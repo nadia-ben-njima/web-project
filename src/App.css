@@ -1,38 +1,765 @@
-.App {
-  text-align: center;
+/* General styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  
+}
+body{
+  background-image: url('/Users/bennjimanadia/mon-ecommerce/src/assets/bckg_image.png');
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.topnav {
+  background-color: #d4b3b3;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 1000px;
+  padding: 10px 0;
+  justify-content: space-between;
 }
 
-.App-header {
-  background-color: #282c34;
+/* Logo styling */
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+/* Search input wrapper to hold button and input together */
+.search-input-wrapper {
+  position: relative;
+  width: 50%;
+}
+
+.search-input-wrapper input[type="text"] {
+  padding: 10px 15px 10px 40px; /* Add left padding to fit the icon */
+  border-radius: 20px;
+  border: none;
+  width: 100%;
+  font-size: 1em;
+}
+
+/* Search button styling */
+.search-button {
+  position: absolute;
+  top: 50%;
+  left: 10px; /* Adjust left positioning as needed */
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+}
+
+/* Sign In link styling */
+.nav-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+/* Icons styling */
+.nav-icon {
+  font-size: 1.5em;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+.nav-links Link {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.nav-links Link:hover {
+  color: #000;
+}
+.signin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+}
+
+.signin-box {
+  background: rgba(255, 255, 255, 0.625); /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.signin-box h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.signin-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-box input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccccccdf;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.signin-box button {
+  padding: 10px;
+  background-color: #d4b3b3; /* Match the button color from the screenshot */
+  border: none;
+  border-radius: 5px;
+  color: #ffffffc1;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  
+}
+
+.signin-box button:hover {
+  background-color: #d4b3b3; /* Darken button on hover */
+  
+}
+/* Conteneur principal */
+.role-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Conteneur des images */
+.role-images-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px; /* Espacement entre les cartes */
+}
+
+/* Carte pour chaque rôle */
+.role-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 250px; /* Largeur de la carte */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+/* Effet au survol des cartes */
+.role-card:hover {
+  transform: scale(1.05);
+}
+
+/* Style des images */
+.role-image {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Texte sous chaque image 
+.role-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}*/
+
+/* Bouton pour choisir le rôle */
+.role-button {
+  padding: 10px 20px;
+  background-color: #d4b3b3;
+  text-decoration: #ffffff00;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.role-button:hover {
+  background-color: #d4b3b3;
+}
+.createaccount-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.createaccount-box {
+  background: rgba(255, 255, 255, 0.625); /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.createaccount-box h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.createaccount-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.createaccount-box input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccccccdf;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.createaccount-box button {
+  padding: 10px;
+  background-color: #d4b3b3; /* Match the button color from the screenshot */
+  border: none;
+  border-radius: 5px;
+  color: #ffffffc1;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.createaccount-box button:hover {
+  background-color: #d4b3b3; /* Darken button on hover */
+  
+}
+.create-shop-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.create-shop-container header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.create-shop-form .form-group {
+  margin-bottom: 15px;
+}
+
+.create-shop-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.create-shop-form input,
+.create-shop-form select,
+.create-shop-form button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.create-shop-form button.submit-button {
+  background-color: #d4b3b3;
   color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.create-shop-form button.submit-button:hover {
+  background-color: #d4b3b3;
+}
+.shop-container {
+  display: flex;
+  gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cart-preview {
+  position: sticky;
+  top: 10px;
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 200px;
+  height: auto;
 }
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  background: #fff;
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.product-image:hover {
+  transform: scale(1.1);
+}
+
+.product-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.add-to-cart-btn {
+  background: #d4b3b3;
+  color: rgb(0, 0, 0);
+  font-size: large;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Remove any background, border, or padding */
+.favorite-btn {
+  background: none;  /* Removes any background */
+  border: none;      /* Removes any border */
+  padding: 0;        /* Removes any padding around the button */
+  display: inline-block;  /* Makes the button inline with the content */
+}
+
+.favorite-btn .fa-heart {
+  color: #ccc;       /* Default heart color (unfilled) */
+  transition: color 0.3s;
+  font-size: 30px;    /* Set the icon size */
+  background: none;   /* Ensures no background around the icon */
+  padding: 0;         /* Removes any extra padding around the icon */
+  border: none;       /* Ensures no border */
+}
+
+.favorite-btn .fa-heart.active {
+  color: #d4b3b3;     /* Filled heart color when active */
+}
+
+/* Prevent outline when focused */
+.favorite-btn:focus {
+  outline: none;      /* Removes focus outline */
+}
+
+
+
+
+
+
+.quick-view-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quick-view {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  text-align: center;
+}
+
+.quick-view-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+/* Add this to your styles */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.cart-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-summary {
+  margin-top: 20px;
+}
+
+.cart-icon {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar {
+  position: relative;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.add-to-cart-btn {
+  background-color: #d4b3b3;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.favorite-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.favorite-btn .fa-heart.active {
+  color: red;
+}
+
+.quick-view-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quick-view {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  position: relative;
+}
+
+.quick-view .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-item-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+.cart-drawer {
+  position: fixed;
+  right: -100%; /* Hidden initially */
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.cart-drawer.open {
+  right: 0; /* Slide-in effect */
+}
+
+.cart-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-items {
+  padding: 16px;
+  overflow-y: auto;
+  height: calc(100% - 60px); /* Adjust for header height */
+}
+
+.cart-drawer-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.close-drawer-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.signinbuyer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.signinbuyer-box {
+  background: rgba(255, 255, 255, 0.625); /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.signinbuyer-box h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.signinbuyer-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signinbuyer-box input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccccccdf;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.signinbuyer-box button {
+  padding: 10px;
+  background-color: #d4b3b3; /* Match the button color from the screenshot */
+  border: none;
+  border-radius: 5px;
+  color: #ffffffc1;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.signinbuyer-box button:hover {
+  background-color: #d4b3b3; /* Darken button on hover */
+  
+}
+.cart-total-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 300px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-total-card h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.cart-summary {
+  margin-bottom: 20px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+.summary-row.total {
+  font-weight: bold;
+  border-top: 2px solid #ddd;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.checkout-button {
+  background-color: #d4b3b3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-button:hover {
+  background-color: #d4b3b3;
+}
+.signinseller-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.signinseller-box {
+  background: rgba(255, 255, 255, 0.625); /* Semi-transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.signinseller-box h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.signinseller-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signinseller-box input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccccccdf;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.signinseller-box button {
+  padding: 10px;
+  background-color: #d4b3b3; /* Match the button color from the buyer page */
+  border: none;
+  border-radius: 5px;
+  color: #ffffffc1;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.signinseller-box button:hover {
+  background-color: #d4b3b3; /* Keep hover style consistent */
+}
+
