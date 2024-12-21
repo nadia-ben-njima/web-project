@@ -1,35 +1,21 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+// models/Seller.js
+const mongoose = require('mongoose');
 
-const sellerSchema = new Schema({
-  sellerName: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-  shopName: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  category: {
-    type: String,
-    required: true,
-  },
-  logo: {
-    type: String, 
-    required: false,
-  }
+const productSchema = new mongoose.Schema({
+  name: String,
+  images: [String],
+  price: Number,
+  isFinalized: { type: Boolean, default: false },
 });
 
-const Seller = mongoose.model('Seller', sellerSchema);
+const sellerSchema = new mongoose.Schema({
+  sellerName: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  shopName: { type: String, required: true, unique: true },
+  category: { type: String, required: true },
+  logo: { type: String },
+  products: [productSchema], // Array of products
+});
 
-module.exports = Seller;
+module.exports = mongoose.model('Seller', sellerSchema);

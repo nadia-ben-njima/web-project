@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link for navigation
+import { Link, Navigate, useNavigate } from 'react-router-dom'; // Import Link for navigation
 import axios from 'axios'; // Import axios for making API requests
 
 function SignInBuyer() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,10 +16,10 @@ function SignInBuyer() {
     };
 
     try {
-      // Send POST request to your backend API to handle sign-in
+      
       const response = await axios.post('http://localhost:9000/api/shopper/login', userData);
       console.log('Sign-in successful:', response.data);
-      // Handle the response or redirect user to another page after successful sign-in
+      navigate('/')
     } catch (error) {
       console.error('Error signing in:', error.response ? error.response.data : error.message);
     }
@@ -45,9 +46,14 @@ function SignInBuyer() {
         </form>
 
         <p>
-          You don't have an account?{' '}
-          <Link to="/createaccount">Join us now</Link> {/* Link to the create account page */}
+          You don't have an account ?{' '}
+          <Link to="/createaccount">Join us now</Link> 
         </p>
+        <p>
+          You forgot your password ?{' '}
+          <Link to="/resetpassword">Reset your password</Link> 
+        </p>
+
       </div>
     </div>
   );

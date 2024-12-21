@@ -1,13 +1,15 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
+import CheckoutForm from './CheckoutForm';
+import React, { useEffect, useState } from "react";
 
 const CartTotalCard = () => {
   const cartItems = useSelector((state) => state.cart.items);
+  const [isCheckoutVisible, setCheckoutVisible] = useState(false);
 
-  // Calculate the subtotal
+  
   const subtotal = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
-  // Fixed shipping cost (e.g., free or flat rate)
+
   const shippingCost = 0;
 
   return (
@@ -27,7 +29,13 @@ const CartTotalCard = () => {
           <span>${(subtotal + shippingCost).toFixed(2)}</span>
         </div>
       </div>
-      <button className="checkout-button">Proceed to checkout</button>
+      {!isCheckoutVisible ? (
+        <button className="checkout-button" onClick={() => setCheckoutVisible(true)}>
+          Proceed to checkout
+        </button>
+      ) : (
+        <CheckoutForm cartItems={cartItems} />
+      )}
     </div>
   );
 };

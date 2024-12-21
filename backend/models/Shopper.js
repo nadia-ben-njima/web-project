@@ -5,14 +5,22 @@ const shopperSchema = new Schema({
   email: {
     type: String,
     required: true,
-    unique: true, // Ensures no duplicate emails
+    unique: true, 
   },
   password: {
     type: String,
     required: true,
   },
+  resetToken: {
+    type: String,
+    default: null, 
+  },
+  resetTokenExpiration: {
+    type: Date,
+    default: null, 
+  },
 });
 
-const Shopper = mongoose.model("Shopper", shopperSchema);
+module.exports = mongoose.model("Shopper", shopperSchema);
 
-module.exports = Shopper;
+

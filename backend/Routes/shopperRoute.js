@@ -1,11 +1,13 @@
 const express = require('express');
-const { registerShopper, loginShopper } = require('../Controllers/shopperController'); // Ensure these functions exist
+const { registerShopper, loginShopper ,resetPassword,requestPasswordReset} = require('../Controllers/shopperController');
 const shopperRoute = express.Router();
 
-// Shopper Registration Route
-shopperRoute.post('/register', registerShopper); // Ensure registerShopper is defined in shopperController
 
-// Shopper Login Route
-shopperRoute.post('/login', loginShopper); // Ensure loginShopper is defined in shopperController
+shopperRoute.post('/register', registerShopper); 
 
+
+shopperRoute.post('/login', loginShopper); 
+shopperRoute.post('/request-password-reset',requestPasswordReset);
+
+shopperRoute.post('/reset-password',resetPassword);
 module.exports = shopperRoute;

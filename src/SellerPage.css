@@ -1,97 +1,148 @@
 .seller-page {
     font-family: Arial, sans-serif;
-  }
-  
-  .shop-header {
+}
+
+.shop-header {
     display: flex;
     align-items: center;
-    padding: 10px;
-    background-color: #f4f4f4;
-  }
-  
-  .shop-logo img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .shop-info h2 {
-    margin: 0;
-    font-size: 1.5rem;
-  }
-  
-  .shop-content {
-    padding: 20px;
-  }
-  
-  .items-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
-  .item-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
     padding: 15px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .image-preview img {
-    max-width: 100%;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  
-  .placeholder-item {
-    border: 2px dashed #ccc;
+    background-color: #d4b3b3; /* Primary color for header */
+    opacity: 0.9; /* Slightly more opaque for better contrast */
+    color: white; /* White text for contrast */
+    box-shadow: 0 2px 4px rgba(239, 214, 190, 0.1);
+}
+
+.shop-logo {
+    position: relative; /* Positioning context for camera icon */
+    margin-right: 20px; /* Add margin to separate from shop info */
+}
+
+.logo-container {
+    position: relative; /* Positioning context for camera icon */
+}
+
+.logo-image {
+    width: 70px; /* Adjust size as needed */
+    height: 70px; /* Adjust size as needed */
+    border-radius: 50%; /* Circular shape */
+    object-fit: cover; /* Ensures the image covers the circle without distortion */
+}
+
+.placeholder-logo {
+    width: 70px; /* Adjust size as needed */
+    height: 70px; /* Adjust size as needed */
+    border-radius: 50%; /* Circular shape */
+    background-color: rgba(200, 200, 200, 0.5); /* Gray semi-transparent background */
+}
+
+/* Camera Icon Styling */
+.camera-icon-label {
+    position: absolute; /* Positioning for camera icon */
+    bottom: -5px; /* Adjust position as needed */
+    right: -5px; /* Adjust position to be at the bottom right corner */
+}
+
+.camera-icon {
+    font-size: 24px; /* Icon size */
+    color: white; /* White color for better contrast against darker backgrounds */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background for contrast */
+    border-radius: 50%; /* Circular background for icon */
+    padding: 5px; /* Padding around the icon for better touch area */
+}
+
+/* Content Styles */
+.shop-content {
     padding: 20px;
-    border-radius: 5px;
-    color: #777;
-    cursor: pointer;
-  }
-  
-  .item-name-input {
-    width: 90%;
-    padding: 8px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .finalized-name {
-    font-weight: bold;
-    margin: 10px 0;
-  }
-  
-  .item-actions button {
-    padding: 8px 12px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .finalize-button {
-    background-color: #28a745;
-    color: #fff;
-  }
-  
-  .delete-button {
-    background-color: #dc3545;
-    color: #fff;
-  }
-  
-  .add-item-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
+}
+
+/* Items Grid */
+.items-grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+   gap: 20px;
+}
+
+/* Item Card Styles */
+.item-card {
+   border: none; /* Remove default border */
+   border-radius: 10px;
+   padding: 15px;
+   background-color: white; /* White background for cards */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   text-align: center;
+   transition: transform 0.2s; /* Smooth hover effect */
+}
+
+.item-card:hover {
+   transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Image Preview Styles */
+.image-preview img {
+   max-width: 100%;
+   border-radius: 5px;
+   margin-bottom: 10px;
+}
+
+/* Placeholder Item Styles */
+.placeholder-item {
+   border: 2px dashed #d4b3b3; /* Primary color for placeholder */
+   padding: 20px;
+   border-radius: 5px;
+   color: #000000; /* Match text color with primary color */
+   cursor: pointer;
+}
+
+/* Input Styles */
+.item-name-input {
+   width: calc(100% - 20px);
+   padding: 10px; /* Increased padding for better usability */
+   margin-top: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+}
+
+.finalized-name {
+   font-weight: bold;
+   margin-top:10 px ;/* Added margin for spacing*/
+}
+
+/* Button Styles */
+.item-actions button {
+   padding :10 px ;/* Increased padding for buttons*/
+   margin-top :5 px ;/* Added margin for spacing*/
+   border-radius :5 px ;
+}
+
+.finalize-button {
+   background-color :#28a745 ;/* Green for finalize button*/
+   color :white ;
+}
+
+.delete-button {
+   background-color :#dc3545 ;/* Red for delete button */
+   color :white ;
+}
+
+.add-item-button {
+   background-color:#d4b3b3; /* Primary color for add item button */
+   color:white;
+   padding :12 px ;/* Increased padding for better touch targets*/
+   border-radius :5 px ;
+}
+
+/* Responsive Design Enhancements */
+
+@media (max-width :768) {
+
+.shop-header{
+flex-direction :column ;/* Stack logo and info on smaller screens*/
+align-items :flex-start ;/* Align items to the start*/
+}
+.shop-info h2{
+font-size :1.5 rem ; 
+}
+.shop-info p{
+font-size:.9 rem ; 
+}
+}

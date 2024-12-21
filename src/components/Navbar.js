@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
+import { UserRole } from './userRole'; // Ensure this function is correctly implemented
 
 const Navbar = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const cartItems = useSelector((state) => state.cart.items); // Get the cart items from Redux state
+  const cartItems = useSelector((state) => state.cart.items);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (event) => {
+    const query = event.target.value;
+    setSearchQuery(query);
+    if (query.trim()) {
+      navigate(`/search?q=${query}`);
+    }
+  };
 
   const handleCartClick = () => {
     navigate('/cart');
@@ -17,19 +27,24 @@ const Navbar = () => {
     navigate('/favorites');
   };
 
-  const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0); // Calculate the total number of items in the cart
+  const itemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <nav className="topnav">
       <div className="search-container">
         <Link to="/">
-        <img src={logo} className="App-logo" width={100} height={100} alt="logo" />
+          <img src={logo} className="App-logo" width={100} height={100} alt="logo" />
         </Link>
         <div className="search-input-wrapper">
           <button className="search-button">
             <i className="fa fa-search"></i>
           </button>
-          <input type="text" placeholder={t('Search')} />
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={handleSearch} // Trigger search on input change
+            placeholder={t('Search')}
+          />
         </div>
 
         <Link to="/role" className="nav-link">{t('signin')}</Link>

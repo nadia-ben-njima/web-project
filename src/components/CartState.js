@@ -12,9 +12,9 @@ const cartSlice = createSlice({
     addItemToCart(state, action) {
       const existingItem = state.items.find(item => item.id === action.payload.id);
       if (existingItem) {
-        existingItem.quantity += 1; // Increase quantity if item already exists
+        existingItem.quantity += 1; 
       } else {
-        state.items.push({ ...action.payload, quantity: 1 }); // Add new item with quantity 1
+        state.items.push({ ...action.payload, quantity: 1 }); 
       }
     },
     removeItemFromCart(state, action) {
@@ -25,9 +25,9 @@ const cartSlice = createSlice({
       const existingIndex = state.favorites.findIndex(item => item.id === product.id);
 
       if (existingIndex >= 0) {
-        state.favorites.splice(existingIndex, 1); // Remove from favorites
+        state.favorites.splice(existingIndex, 1); 
       } else {
-        state.favorites.push(product); // Add to favorites
+        state.favorites.push(product); 
       }
     },
     updateItemQuantity(state, action){
